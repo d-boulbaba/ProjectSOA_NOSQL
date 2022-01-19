@@ -1,0 +1,60 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: book-service
+          uri: lb://book-service
+          predicates:
+            - Path=/book/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: book-service
+                fallbackuri: forward:/bookServiceFallBack
+        - id: loan-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/loan/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: loan-service
+                fallbackuri: forward:/loanServiceFallBack
+        - id: student-service
+          uri: lb://student-service
+          predicates:
+            - Path=/student/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: student-service
+                fallbackuri: forward:/studentServiceFallBack
+        - id: admin-service
+          uri: lb://admin-service
+          predicates:
+            - Path=/admin/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: student-service
+                fallbackuri: forward:/adminServiceFallBack
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+

@@ -12,4 +12,5 @@ public interface AdminService
      List<Admin> findAll();
     List<Admin> findByLastName(String lastName);
     Admin insert(Admin customer);
+     void delete(Admin student);
 }

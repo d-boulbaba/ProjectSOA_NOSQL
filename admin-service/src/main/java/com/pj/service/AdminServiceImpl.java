@@ -49,4 +49,8 @@ public class AdminServiceImpl implements AdminService
     {
         return adminRepository.insert(customer);
     }
+    @Override
+    public void delete(Admin student) {
+        adminRepository.delete(student);
+    }
 }

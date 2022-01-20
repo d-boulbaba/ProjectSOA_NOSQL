@@ -12,4 +12,6 @@ public interface StudentService
      List<Student> findAll();
     List<Student> findByLastName(String lastName);
     Student    insert(Student customer);
+    public void delete(Student student);
+
 }

@@ -49,4 +49,9 @@ public class StudentServiceImpl implements StudentService
     {
         return studentRepository.insert(customer);
     }
+
+    @Override
+    public void delete(Student student) {
+         studentRepository.delete(student);
+    }
 }

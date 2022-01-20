@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -41,16 +42,16 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="admin-service" options="-parameters" />
       <module name="book-service" options="-parameters" />
-      <module name="cloud-config-server" options="-parameters" />
-      <module name="cloud-gateway" options="-parameters" />
+      <module name="cloud-config-server" options="-parameters --add-modules java.base" />
+      <module name="cloud-gateway" options="-parameters --add-modules java.base" />
       <module name="department-service" options="-parameters" />
       <module name="hystrix-dashboard" options="-parameters" />
       <module name="loan-service" options="-parameters" />
-      <module name="service-registry" options="-parameters" />
-      <module name="springboot-mongodb" options="-parameters" />
-      <module name="springboot-mongodb (1)" options="-parameters" />
-      <module name="springboot-mongodb (2)" options="-parameters" />
-      <module name="springboot-mongodb (3)" options="-parameters" />
+      <module name="service-registry" options="-parameters --add-modules java.base" />
+      <module name="springboot-mongodb" options="-parameters --add-modules java.base" />
+      <module name="springboot-mongodb (1)" options="-parameters --add-modules java.base" />
+      <module name="springboot-mongodb (2)" options="-parameters --add-modules java.base" />
+      <module name="springboot-mongodb (3)" options="-parameters --add-modules java.base" />
       <module name="student-service" options="-parameters" />
     </option>
   </component>
